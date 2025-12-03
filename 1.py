@@ -1,6 +1,4 @@
-def get_inputs():
-    with open("1.txt") as file:
-        return file.readlines()
+import sys
 
 
 def get_password(inputs: list[str]) -> int:
@@ -21,6 +19,7 @@ def get_password(inputs: list[str]) -> int:
     return counter
 
 
-inputs = get_inputs()
-print(len(inputs))
-print(get_password(inputs))
+lines: list[str] = []
+for line in sys.stdin:
+    lines.append(line.strip())
+print(get_password(lines))

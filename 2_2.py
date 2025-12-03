@@ -38,7 +38,7 @@ def sum_of_invalid_ids_in_range(r: list[int]) -> int:
         if invalid:
             res += i
             print(f"Invalid: {i}")
-        else: 
+        else:
             print(f"Valid: {i}")
 
     return res
