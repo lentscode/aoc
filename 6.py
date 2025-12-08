@@ -1,6 +1,7 @@
 import sys
 
-def strange_math(numbers:list[list[int]], operations: list[str])->int:
+
+def strange_math(numbers: list[list[int]], operations: list[str]) -> int:
     total = 0
 
     for i, operation in enumerate(operations):
@@ -11,11 +12,12 @@ def strange_math(numbers:list[list[int]], operations: list[str])->int:
             else:
                 partial *= numbers[j][i]
 
-        total += partial            
+        total += partial
 
     return total
 
-def parse_input(lines: list[str])->tuple[list[list[int]], list[str]]:
+
+def parse_input(lines: list[str]) -> tuple[list[list[int]], list[str]]:
     numbers: list[list[int]] = []
     operations: list[str] = []
 
@@ -24,12 +26,13 @@ def parse_input(lines: list[str])->tuple[list[list[int]], list[str]]:
             operations = line.strip().split(" ")
             operations = [x for x in operations if x != ""]
         else:
-            new_numbers_str= line.strip().split(" ")
+            new_numbers_str = line.strip().split(" ")
             new_numbers = [int(x) for x in new_numbers_str if x != ""]
 
             numbers.append(new_numbers)
 
     return numbers, operations
+
 
 lines: list[str] = []
 for line in sys.stdin:
